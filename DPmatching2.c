@@ -64,8 +64,7 @@ int main(void)
 				printf("miti file open error!!\n");
 				exit(EXIT_FAILURE);
 			}
-		}
-
+		
 		fgets(city_miti.name, sizeof(city_miti.name), fp_miti);
 		fgets(city_miti.onso, sizeof(city_miti.onso), fp_miti);
 		fgets(ch0, sizeof(ch0), fp_miti);
@@ -152,12 +151,12 @@ int main(void)
 	if(num_matchfname != h0)
 	{
 		printf("----------Result NOT Matching----------\n");
-		printf("city_temp : city%03d/city%03d_%03d.txt\n", TEMP_NUM, h0 + 1);
+		printf("city_temp : city%03d/city%03d_%03d.txt\n", TEMP_NUM, TEMP_NUM, h0 + 1);
 		printf("city_miti : city%03d_city%03d_%03d.txt\n", MITI_NUM, MITI_NUM, num_matchfname + 1);
 		printf("tangokankyori : %f\n", tangokankyori_min);
 	}
 
-	
+	}
 
 	sprintf(ch0, FNAME_OUTPUT);
 
