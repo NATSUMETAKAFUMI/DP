@@ -5,7 +5,7 @@
 #define MAXSIZE 254
 #define DIMENTION 15
 #define NUMOFFILE 100
-#define FNAME_OUTPUT
+#define FNAME_OUTPUT "./output001.txt"
 #define TEMP_NUM 11
 #define MITI_NUM 21
 
@@ -31,11 +31,11 @@ int main(void)
 	int num_matchfname = 0;
 	int count = 0;
 
-	printf("city%033dとcity%03dの認識実験を行います\n", TEMP_NUM, MITI_NUM);
+	printf("city%03dとcity%03dの認識実験を行います\n", TEMP_NUM, MITI_NUM);
 
 	for(h0 = 0; h0 < NUMOFFILE; h0++)
 	{
-		sprintf(ch0, "./city_mcepdata/city%03d/city%03d_%03d.txt", TEMP_NUM, TEMP_NUM, h0 + 1);
+		sprintf(ch0, "./city%03d/city%03d_%03d.txt", TEMP_NUM, TEMP_NUM, h0 + 1);
 
 		if((fp_temp = fopen(ch0, "r")) == NULL)
 		{
@@ -58,7 +58,7 @@ int main(void)
 
 		for(h = 0; h < NUMOFFILE; h++)
 		{
-			sprintf(ch0, "./city_mcepdata/city%03d/city%03_%03d.txt", MITI_NUM, MITI_NUM, h + 1);
+			sprintf(ch0, "./city%03d/city%03d_%03d.txt", MITI_NUM, MITI_NUM, h + 1);
 			if((fp_miti = fopen(ch0, "r")) == NULL)
 			{
 				printf("miti file open error!!\n");
@@ -80,7 +80,7 @@ int main(void)
 
 		for(i = 0; i < city_temp.flame; i++)
 		{
-			for(j = 0; city_miti.flame; j++)
+			for(j = 0; j < city_miti.flame; j++)
 			{
 				d[i][j] = 0;
 				for(int k = 0; k < DIMENTION; k++)
